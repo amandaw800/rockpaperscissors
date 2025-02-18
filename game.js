@@ -18,16 +18,13 @@ function getComputerChoice()
 
     if(rand == 3)
     {
-        console.log("scissors")
         return "scissors"
     }
     else if(rand == 1)
     {
-        console.log("rock")
         return "rock"
     }
     else {
-        console.log("paper")
         return "paper"
     }
 }
@@ -66,40 +63,40 @@ function playRound(humanChoice, computerChoice)
     if(humanChoice == "paper" && computerChoice == "rock")
     {
         humanScore += 1;
-        console.log("You win! Paper beats rock!")
+        return "You win! Paper beats rock!";
 
     }
     else if(humanChoice == "rock" && computerChoice == "paper")
     {
         computerScore += 1;
-        console.log("You lose! Paper beats rock!")
+        return "You lose! Paper beats rock!";
     }
 
     // Rock beats scissors
     else if(humanChoice == "rock" && computerChoice == "scissors")
     {
         humanScore += 1;
-        console.log("You win! Rock beats scissors!")
+        return "You win! Rock beats scissors!";
     }
     else if(humanChoice == "scissors" && computerChoice == "rock")
     {
         computerScore += 1;
-        console.log("You lose! Rock beats scissors!")
+        return "You lose! Rock beats scissors!";
     }
 
     // Scissors beats paper
     else if(humanChoice == "scissors" && computerChoice == "paper")
     {
         humanScore += 1;
-        console.log("You win! Scisssors beats paper!")
+        return "You win! Scisssors beats paper!";
     }
     else if(humanChoice == "paper" && computerChoice == "scissors")
     {
         computerScore += 1;
-        console.log("You lose! Scissors beats paper!")
+        return "You lose! Scissors beats paper!";
     }
     else {
-        console.log("It's a tie!")
+        return "It's a tie!";
     }
 
     //increment the score on whoever wins 
@@ -110,28 +107,28 @@ function playRound(humanChoice, computerChoice)
 
 function playGame()
 {
-    /** 
+    
 
-    for(let i = 0; i < 5; i++)
+  //  for(let i = 0; i < 5; i++)
 
-        playRound(getHumanChoice(), getComputerChoice())
+       // playRound(getHumanChoice(), getComputerChoice())
 
-    }
-        */
+   // }
+        
 
     //playRound(getHumanChoice(), getComputerChoice())
 
     if(humanScore > computerScore)
     {
-        console.log("Humans have won!")
+        return "Humans have won!"
     }
     else if(humanScore < computerScore)
     {
-        console.log("The computer has won!")
+        return "The computer has won!"
 
     }
     else {
-        console.log("It's a tie!")
+        return "It's a tie!"
     }
     
 
@@ -149,8 +146,13 @@ const rock = document.querySelector("#rock");
 const paper = document.querySelector("#paper");
 const scissors = document.querySelector("#scissors");
 
-//Create results
-const result = document.querySelector("#results");
+//Create results for one round
+const roundResult = document.querySelector("#results");
+
+//takes in the choices of the computer and human
+const choices = document.querySelector("#choices");
+
+
 
 //Add text
 title.textContent = "Choose a move:";
@@ -163,23 +165,44 @@ scissors.textContent = "Scissors";
 
 //create the on-click for rock
 rock.addEventListener("click", () =>{
-    playRound("rock", getComputerChoice())
+
+    var comp = "";
+
+    const round =  playRound("rock",  comp = getComputerChoice());
+
+    choices.textContent = "You chose rock. The computer chose " +  comp +".";
+
+    roundResult.textContent = round;
+
 
 
 });
 
 //create the on-click for paper
 paper.addEventListener("click", () =>{
-    playRound("paper", getComputerChoice())
+    var comp = "";
+
+    const round =  playRound("paper",  comp = getComputerChoice());
+
+    choices.textContent = "You chose paper. The computer chose " +  comp +".";
+
+    roundResult.textContent = round;
+
 
 });
 
 //create the on-click for scissors
 scissors.addEventListener("click", () =>{
-    playRound("scissors", getComputerChoice())
+    var comp = "";
+
+    const round =  playRound("scissors",  comp = getComputerChoice());
+
+    choices.textContent = "You chose scissors. The computer chose " +  comp +".";
+
+    roundResult.textContent = round;
+
 
 });
 
 
 
-//playGame()
