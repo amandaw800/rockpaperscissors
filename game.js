@@ -110,13 +110,16 @@ function playRound(humanChoice, computerChoice)
 
 function playGame()
 {
-
+    /** 
 
     for(let i = 0; i < 5; i++)
-    {
+
         playRound(getHumanChoice(), getComputerChoice())
 
     }
+        */
+
+    //playRound(getHumanChoice(), getComputerChoice())
 
     if(humanScore > computerScore)
     {
@@ -134,6 +137,32 @@ function playGame()
 
 }
 
-playGame()
+
+/**
+ * ----------------------
+ */
+//create the 3 buttons
+const rock = document.querySelector("#rock");
+const paper = document.querySelector("#paper");
+const scissors = document.querySelector("#scissors");
+
+//create the on-click for rock
+rock.addEventListener("click", () =>{
+    playRound("rock", getComputerChoice())
 
 
+});
+
+//create the on-click for paper
+paper.addEventListener("click", () =>{
+
+});
+
+//create the on-click for scissors
+scissors.addEventListener("click", () =>{
+
+});
+
+
+
+//playGame()
