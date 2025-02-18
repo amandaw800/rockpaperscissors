@@ -141,10 +141,25 @@ function playGame()
 /**
  * ----------------------
  */
+
+//Create title
+const title = document.querySelector("#title");
 //create the 3 buttons
 const rock = document.querySelector("#rock");
 const paper = document.querySelector("#paper");
 const scissors = document.querySelector("#scissors");
+
+//Create results
+const result = document.querySelector("#results");
+
+//Add text
+title.textContent = "Choose a move:";
+
+rock.textContent = "Rock";
+paper.textContent = "Paper";
+scissors.textContent = "Scissors";
+
+
 
 //create the on-click for rock
 rock.addEventListener("click", () =>{
@@ -155,11 +170,13 @@ rock.addEventListener("click", () =>{
 
 //create the on-click for paper
 paper.addEventListener("click", () =>{
+    playRound("paper", getComputerChoice())
 
 });
 
 //create the on-click for scissors
 scissors.addEventListener("click", () =>{
+    playRound("scissors", getComputerChoice())
 
 });
 
