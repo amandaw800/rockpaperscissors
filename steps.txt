@@ -1,0 +1,78 @@
+computerChoice()
+/**
+ * getComputerChoice randomly returns one of the following string values
+ * 1) "rock"
+ * 2) "paper"
+ * 3) "scissors"
+ * 
+ * How do I randomize values?
+ * - Use Math.random()
+ * 
+ * Steps:
+ * Create a variable random that takes in Math.random() that generates a number from 0 - 2
+ * if the value is 0 
+ *  return "rock"
+ * else if the value is 1
+ *  return "paper"
+ * else if the value is 2
+ *  return "scissors"
+ * 
+ */
+
+ humanChoice()
+ /**
+ * getHumanChoice will take in user input of one of the valid choices (scissors, rock, and paper)
+ * In this case, we are able to assume the user will ALWAYS input a valid choice
+ * 
+ * Get the user's choice using prompt() method
+ * 
+ * Steps: 
+ * Create a variable choice that has a prompt() that asks what choice they are choosing
+ * return choice
+ * 
+ * 
+ */
+
+ playRound(humanChoice, computerChoice)
+ /**
+ * Write a function that takes in the human and computer choices as arguments
+ * Play a single round
+ * Increment the round winner's score 
+ * Log a winner annoucement
+ * 
+ * Steps:
+ * Make humanChoice case insensitive -> toLowerCase the value
+ * 
+ * Make a lose variable that contains the string You lose! computerChoice() beats humanChoice()
+ * Make a win variable that contains the string You win! humanChoice() beats computerChoice()
+ * Make a tie variable that contains the string It's a tie! 
+ * 
+ * if humanChoice is rock and computerChoice is paper
+ * increment computerScore
+ *  return lose
+ * 
+ * if humanChoice is paper and computerChoice is scissors
+ *  increment computerScore
+ * return lose
+ * 
+ * if humanChoice is scissors and computerChoice is rock
+ *  increment computerScore
+ * return lose
+ * 
+ * if humanChoice is paper and computerChoice is rock
+ *  increment humanScore
+ * return win
+ * 
+ * if humanChoice is scissors and computerChoice is paper
+ * increment humanScore
+ * return win
+ * 
+ * if humanChoice is rock and computerChoice is scissors
+ *  increment humanScore
+ * return win
+ * 
+ * otherwise 
+ * return tie
+ * 
+ *  
+ */
